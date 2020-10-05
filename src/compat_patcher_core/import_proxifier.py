@@ -121,7 +121,6 @@ else:
             # We do the real loading of aliased module here
             with enrich_import_error(self.alias_name):
                 module = importlib.import_module(self.real_name, package=None)
-            assert module.__name__ == self.real_name, module.__name__
             self.target_spec_backup = module.__spec__
             return module
 
